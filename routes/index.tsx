@@ -8,12 +8,12 @@ export default function Home() {
       <Head>
         <title>Fresh App</title>
       </Head>
-      <div className="p-4 flex flex-col gap-y-[80px] mx-auto max-w-screen-md">
+      <div className="flex flex-col gap-y-[80px] p-4 bg-green-500 min-h-screen items-center">
         <Navbar />
-        <div className="flex flex-col gap-y-[16px]">
-          <h1>Orange</h1>
+        <div className="flex flex-col gap-y-[16px] font-inter">
+          <h1 className="text-lg text-violet-200 text-bold">FRESH</h1>
           <p>
-            Welcome to orange. The website of ours favorite arts.
+            Welcome to a website made in fresh.
           </p>
         </div>
       </div>

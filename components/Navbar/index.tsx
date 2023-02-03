@@ -1,17 +1,26 @@
 export function Navbar() {
+  const navLinks = [
+    { name: "Docs" },
+    { name: "Showcase" },
+    { name: "Components" },
+    { name: "Discord" },
+  ];
   return (
-    <div className="flex flex-row justify-between w-full items-center">
+    <div className="flex flex-row justify-between w-full items-center px-[25rem]">
       <img
-        src="/orangeLogo.svg"
+        src="/logo.svg"
         class="w-12 h-12"
         alt="the orange logo: a simple orange"
       />
-      <div class="flex flex-row gap-x-[8px]">
-        <div className="flex flex-col gap-y-[4px] hover:cursor-pointer">
-          <p className="text-black hover:text-orange-500 transition-all">
-            Movies!
-          </p>
-        </div>
+      <div className=" flex flex-row gap-x-lg">
+        {navLinks.map((nav) => (
+          <div className="group flex flex-col gap-y-[0.05rem] hover:cursor-pointer">
+            <p className="font-inter text-black">
+              {nav.name}
+            </p>
+            <div className="w-0 group-hover:w-full h-[0.01rem] bg-black ease-in duration-300" />
+          </div>
+        ))}
       </div>
     </div>
   );
