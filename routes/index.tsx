@@ -15,7 +15,10 @@ export const handler: Handlers<Data> = {
   GET(req, ctx) {
     const url = new URL(req.url);
     const query = url.searchParams.get("q") || "";
-    const results = NAMES.filter((name) => name.includes(query));
+    let results = NAMES.filter((name) => name.includes(query));
+    if (query === "") {
+      results = [];
+    }
     return ctx.render({ results, query });
   },
 };
