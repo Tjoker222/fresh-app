@@ -2,8 +2,7 @@ import { Head } from "$fresh/runtime.ts";
 import { Navbar } from "../components/Navbar/index.tsx";
 import Search from "../islands/Search.tsx";
 import Preview from "../islands/Preview.tsx";
-
-const APIKey = "f2ac32f228e24b49870223747232303";
+import "https://deno.land/x/dotenv/load.ts";
 
 const baseURL = "http://api.weatherapi.com/v1";
 interface Data {
@@ -31,7 +30,9 @@ export const handler: Handlers<Data> = {
   async GET(req, ctx) {
     const url = new URL(req.url);
     const queryLocation = url.searchParams.get("q") || "";
-    const weatherResponse = `${baseURL}/current.json?key=${APIKey}&q=${queryLocation}&aqi=no`;
+    const weatherResponse = `${baseURL}/current.json?key=${Deno.env.get(
+      "API_KEY"
+    )}&q=${queryLocation}&aqi=no`;
     let results = [];
     if (queryLocation !== "") {
       const resp = await fetch(weatherResponse);

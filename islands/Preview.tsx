@@ -23,6 +23,10 @@ interface PreviewProps {
 
 export default function Preview(props: PreviewProps) {
   const [weather, setWeather] = useState(props.data);
+  console.log(typeof weather.location);
+  if (!weather.location) {
+    return <></>;
+  }
   return (
     <div className="flex flex-row gap-x-[10rem] w-fit items-center justify-center">
       <div className="flex flex-col gap-y-[4rem]">
