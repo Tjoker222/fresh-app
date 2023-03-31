@@ -54,7 +54,7 @@ export default function Home({ data }: PageProps<Data>) {
         <title>Weather Verify</title>
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
       </Head>
-      <div className="flex flex-col gap-y-2xl p-4 bg-green-500 min-h-screen items-center">
+      <div className="flex flex-col gap-y-2xl p-4 bg-green-500 min-h-screen items-center w-full">
         <Navbar />
         <div className="flex flex-col gap-y-base font-inter items-center">
           <h1 className="text-lg text-violet-200 text-bold">WEATHER VERIFY</h1>

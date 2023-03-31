@@ -28,13 +28,13 @@ export default function Preview(props: PreviewProps) {
     return <></>;
   }
   return (
-    <div className="flex flex-row gap-x-[10rem] w-fit items-center justify-center">
+    <div className="flex flex-row sm:gap-x-[10rem] justify-between sm:w-fit w-full items-center sm:justify-center">
       <div className="flex flex-col gap-y-[4rem]">
         <p>City: {weather.location.name}</p>
         <p>State: {weather.location.region}</p>
         <p>Country: {weather.location.country}</p>
       </div>
-      <div className="bg-black h-[14rem] w-[0.05rem]" />
+      <div className="bg-black h-[14rem] w-[0.05rem] hidden sm:flex" />
       <div className="flex flex-col gap-y-[4rem]">
         <p>Current Temp: {weather.current.temp_c}°C</p>
         <p>Humidity: {weather.current.humidity}</p>
